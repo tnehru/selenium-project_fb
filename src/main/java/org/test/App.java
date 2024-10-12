@@ -24,13 +24,13 @@ public class App
 
         // WebDriver driver = new ChromeDriver();
         ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--headless");
+        options.addArguments("--headless");
         WebDriver driver = new ChromeDriver(options);
         //open URL
         driver.get("https://facebook.com");
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
-        //locate contact button and click
         Thread.sleep(2000);
+        //locate email id and password fields and click login
         driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("prem@pavan.com");
         driver.findElement(By.xpath("//*[@id=\"pass\"]")).sendKeys("Pavan@123");
         driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div/div/div/div[2]/div/div[1]/form/div[2]/button")).click();
