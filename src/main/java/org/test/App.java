@@ -27,13 +27,16 @@ public class App
         options.addArguments("--headless");
         WebDriver driver = new ChromeDriver(options);
         //open URL
-        driver.get("https://facebook.com");
+        driver.get("http://3.88.143.127:8081");
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
         Thread.sleep(2000);
         //locate email id and password fields and click login
-        driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("prem@pavan.com");
-        driver.findElement(By.xpath("//*[@id=\"pass\"]")).sendKeys("Pavan@123");
-        driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/div/div/div/div[2]/div/div[1]/form/div[2]/button")).click();
+        driver.findElement(By.xpath("/html/body/div/header/div/nav/div/ul/li[4]/a")).click();
+        driver.findElement(By.id("inputName")).sendKeys("Nehru");
+        driver.findElement(By.id("inputNumber")).sendKeys("9898989898");
+        driver.findElement(By.id("inputMail")).sendKeys("nehru@abc.com");
+        driver.findElement(By.id("inputMessage")).sendKeys("Welcome to Insurance Demo Project");
+        driver.findElement(By.id("my-button")).click();
         Thread.sleep(5000);
 
         //capture screenshot
